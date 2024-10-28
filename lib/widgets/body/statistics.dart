@@ -109,9 +109,7 @@ class _StatisticsState extends State<Statistics> {
 
 
             //------------------------------------LEFT SIDE------------------------------------
-            FadeInImage.assetNetwork(
-                placeholder: AssetPath.placeholderPhoto,
-                image: AssetPath.headerMainPhoto, width: Responsive.screenWidth(context) / (Responsive.isDesktop(context) ? 3.5 : 1)),
+            Image.asset(AssetPath.headerMainPhoto, width: Responsive.screenWidth(context) / (Responsive.isDesktop(context) ? 3.5 : 1)),
           ],
         ),
       ),

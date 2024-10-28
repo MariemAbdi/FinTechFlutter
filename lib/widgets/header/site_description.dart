@@ -42,9 +42,8 @@ class _SiteDescriptionState extends State<SiteDescription> {
           children: [
             //------------------------------------RIGHT SIDE(IF DESKTOP ELSE BOTTOM)------------------------------------
             if(Responsive.isDesktop(context))
-              FadeInImage.assetNetwork(
-                  image: AssetPath.headerSecondaryPhoto,
-                  placeholder: AssetPath.placeholderPhoto,
+              Image.asset(
+                  AssetPath.headerSecondaryPhoto,
                   width: Responsive.screenWidth(context) / (Responsive.isDesktop(context) ? 3 : 1)
               ),
 
@@ -95,9 +94,8 @@ class _SiteDescriptionState extends State<SiteDescription> {
 
             //------------------------------------RIGHT SIDE(IF DESKTOP ELSE BOTTOM)------------------------------------
             if(!Responsive.isDesktop(context))
-              FadeInImage.assetNetwork(
-                  image: AssetPath.headerSecondaryPhoto,
-                  placeholder: AssetPath.placeholderPhoto,
+              Image.asset(
+                  AssetPath.headerSecondaryPhoto,
                   width: Responsive.screenWidth(context) / (Responsive.isDesktop(context) ? 3 : 1)
               ),
 
