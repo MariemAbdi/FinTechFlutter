@@ -16,7 +16,7 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: "3.16.9"  # or your Flutter version
+          flutter-version: "3.16.9"  # Ensure this is the correct Flutter version for your project
 
       - name: Install dependencies
         run: flutter pub get
@@ -28,4 +28,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build/web
+          publish_dir: ./build/web  # This is where Flutter builds the web files
+          publish_branch: main  # Ensure the branch is set to 'main' for direct deployment
