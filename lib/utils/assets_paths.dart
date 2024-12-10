@@ -9,6 +9,7 @@ class AssetPath{
   static const headerMainPhoto = "assets/header_image.png";
   static const headerSecondaryPhoto = "assets/header_secondary_image.png";
   static const loanManagementIcon = "assets/loan management.png";
+  static const logoIcon = "assets/logo.png";
   static const moneyJarPhoto = "assets/money jar.jpg";
   static const placeholderPhoto = "assets/Placeholder.png";
   static const shapeIcon = "assets/shape.png";
