@@ -11,7 +11,7 @@ class Header extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: Responsive.screenWidth(context) / (Responsive.isDesktop(context) ? 1.2 : 1),
-      padding: EdgeInsets.only(top: MediaQuery.of(context).size.width * (Responsive.isDesktop(context) ? 0.1 : 0.2), bottom: 20, left: 20, right: 20),
+      padding: EdgeInsets.only(top: MediaQuery.of(context).size.width * (Responsive.isDesktop(context) ? 0.1 : 0.25), bottom: 20, left: 20, right: 20),
       child: const Column(
         children: [
           Introduction(),

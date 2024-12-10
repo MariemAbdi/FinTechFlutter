@@ -36,21 +36,14 @@ class _MainScreenState extends State<MainScreen> {
     scrollController.dispose();
     super.dispose();
   }
-
   void _scrollListener() {
-    if (scrollController.position.pixels > 0) {
-      if (!isScrolled) {
-        isScrolled = true;
-      }
-    } else {
-      if (isScrolled) {
-        isScrolled = false;
-      }
+    bool isScrollingNow = scrollController.position.pixels > previousScrollOffset;
+    if (isScrollingDown != isScrollingNow) {
+      setState(() {
+        isScrollingDown = isScrollingNow;
+      });
     }
-    setState(() {
-      isScrollingDown = scrollController.position.pixels > previousScrollOffset;
-      previousScrollOffset = scrollController.position.pixels;
-    });
+    previousScrollOffset = scrollController.position.pixels;
   }
 
   scrollToWidget(GlobalKey key){
@@ -78,7 +71,7 @@ class _MainScreenState extends State<MainScreen> {
           //----------------------------------------------------MAIN CONTENT----------------------------------------------------
           SingleChildScrollView(
             controller: scrollController,
-            physics: const BouncingScrollPhysics(),
+            physics: const ClampingScrollPhysics(),
             child: Column(
               key: GlobalKey(),
               children: [

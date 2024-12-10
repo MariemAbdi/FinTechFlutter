@@ -32,36 +32,32 @@ class MenuTitles extends StatelessWidget {
                   child: Row(
                     children: [
                       //----------------------------------------------------LOGO----------------------------------------------------
-                      Expanded(
-                        flex: Responsive.isMobile(context) ? 10 : 4,
-                        child: GestureDetector(
-                          onTap: () => scrollTo(menuTitles.first.key), // Scroll action
-                          child: const LogoRow(),
-                        ),
+                      GestureDetector(
+                        onTap: () => scrollTo(menuTitles.first.key), // Scroll action
+                        child: const LogoRow(),
                       ),
 
+                      const Spacer(flex: 5),
 
                       //----------------------------------------------------MENU----------------------------------------------------
-                      Responsive.isDesktop(context)
-                          ? Expanded(
-                        flex: 15,
-                        child: Container(
-                          height: MediaQuery.of(context).size.height * 0.1,
-                          margin: const EdgeInsets.symmetric(horizontal: 10),
-                          child: Center(
-                            child: Wrap(
-                              alignment: WrapAlignment.center,
-                              children: menuTitles.map((item) {
-                                return TextButton(
-                                  onPressed: ()=>scrollTo(item.key),//-------------------------------MOVE TO
-                                  child: Text(item.title),
-                                );
-                              }).toList(),
+                      if(Responsive.isDesktop(context))
+                        Container(
+                            height: MediaQuery.of(context).size.height * 0.1,
+                            margin: const EdgeInsets.symmetric(horizontal: 10),
+                            child: Center(
+                              child: Wrap(
+                                alignment: WrapAlignment.center,
+                                children: menuTitles.map((item) {
+                                  return TextButton(
+                                    onPressed: ()=>scrollTo(item.key),//-------------------------------MOVE TO
+                                    child: Text(item.title),
+                                  );
+                                }).toList(),
+                              ),
                             ),
                           ),
-                        ),
-                      )
-                          : const Spacer(flex: 8),
+
+                      const Spacer(flex: 5),
                       //----------------------------------------------------LOGIN BUTTON----------------------------------------------------
                       Expanded(
                         flex: 2,
